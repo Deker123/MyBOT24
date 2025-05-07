@@ -73,7 +73,7 @@ module.exports.run = async function({ api, event, args }) {
 
   if (!input) {
     return api.sendMessage(
-      "👋Hey User My name is sal sal aihow can i help you today?",
+      "👋Hey User My name is 𝗡𝗼𝘃𝗮 𝗔𝗶 how can i help you today?",
       event.threadID,
       event.messageID
     );
@@ -101,7 +101,8 @@ module.exports.run = async function({ api, event, args }) {
     return api.sendMessage(formattedResponse, event.threadID, event.messageID);
 
   } catch (error) {
-    console.error("⛔ Error processing request:", error.message || error);
+    console.error("❎
+Error processing request:", error.message || error);
     return api.sendMessage(error.message);
   }
 };
