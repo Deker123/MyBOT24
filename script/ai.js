@@ -101,8 +101,7 @@ module.exports.run = async function({ api, event, args }) {
     return api.sendMessage(formattedResponse, event.threadID, event.messageID);
 
   } catch (error) {
-    console.error("❎
-Error processing request:", error.message || error);
+    console.error("⛔ Error processing request:", error.message || error);
     return api.sendMessage(error.message);
   }
 };
