@@ -1,4 +1,3 @@
-
 const axios = require('axios');
 
 function convertToBold(text) {
@@ -74,13 +73,13 @@ module.exports.run = async function({ api, event, args }) {
 
   if (!input) {
     return api.sendMessage(
-      "🥰 HELLO AKO NGA PALA SI DEKER ANO ANG MA I TUTULONG KO SAYO",
+      "🙋Hey IM Deker Ai what i can do to you this day?",
       event.threadID,
       event.messageID
     );
-🇵🇭  }
+  }
 
-  api.sendMessage("Mang Yaring mag antay para sa aking kasagutan ", event.threadID, event.messageID);
+  api.sendMessage("🔄 Generating...", event.threadID, event.messageID);
 
   try {
     const { data } = await axios.get('https://gpt.lorex-ai.com/api/gpt-4o', {
