@@ -1,3 +1,4 @@
+
 const axios = require('axios');
 
 function convertToBold(text) {
@@ -73,18 +74,19 @@ module.exports.run = async function({ api, event, args }) {
 
   if (!input) {
     return api.sendMessage(
-      "👋Hey User My name is 𝗡𝗼𝘃𝗮 𝗔𝗶 how can i help you today?",
+      "🥰 HELLO AKO NGA PALA SI DEKER ANO ANG MA I TUTULONG KO SAYO",
       event.threadID,
       event.messageID
     );
-  }
+🇵🇭  }
 
-  api.sendMessage("🔄 Generating...", event.threadID, event.messageID);
+  api.sendMessage("Mang Yaring mag antay para sa aking kasagutan ", event.threadID, event.messageID);
 
   try {
-    const { data } = await axios.get('https://rapido.zetsu.xyz/api/gpt4o-mini', {
+    const { data } = await axios.get('https://gpt.lorex-ai.com/api/gpt-4o', {
       params: {
-        prompt: input
+        ask: input,
+        uid: uid,
       }
     });
 
@@ -102,6 +104,6 @@ module.exports.run = async function({ api, event, args }) {
 
   } catch (error) {
     console.error("⛔ Error processing request:", error.message || error);
-    return api.sendMessage(error.message);
+    return api.sendMessage("⛔ An error occurred while processing your request. Please try again.", event.threadID, event.messageID);
   }
 };
